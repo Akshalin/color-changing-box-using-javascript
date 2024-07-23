@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript background color</title>
+    <style>
+        #colorBox{
+            width: 400px;
+            border: 1px solid black;
+            margin: 60px 400px;
+            padding: 40px;
+        }
+        #section{
+            background-color: black;
+            color: white;
+            padding: 5px 10px;
+            font-size: 30px;
+        }
+        button{
+            margin: 30px 120px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+        #colorName{
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="colorBox">
+        <div>
+            <div id="section">
+                <div id="colorText">Background Color:<span id="colorName">Red</span></div>
+            </div>
+            <button id="colorbutton">Click here</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var colorBox = document.getElementById('colorBox');
+        var colorText = document.getElementById('colorName');
+        var colorChangeBtn = document.getElementById('colorbutton');
+
+        var colors = ['Red', 'Green', 'Blue', 'Yellow', 'Purple'];
+        var colorIndex = 0;
+
+        colorChangeBtn.onclick = function() {
+            colorIndex = (colorIndex + 1) % colors.length;
+            var newColor = colors[colorIndex];
+            colorBox.style.backgroundColor = newColor.toLowerCase();
+            colorText.textContent = newColor;
+            colorbutton.style.backgroundColor=newColor;
+            colorName.style.color=newColor;
+        }
+    });
+
+    </script>
+</body>
+</html>
